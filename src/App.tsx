@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './style.css';
-import ListingsContainerComponent from './components/container/Listings.tsx';
+import Listings from './components/presentational/Listings.tsx';
 
 export default function App() {
-  return <ListingsContainerComponent />;
+  return <Listings dummyData = 'some dummy data' />;
 }
