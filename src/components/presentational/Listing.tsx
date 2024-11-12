@@ -1,6 +1,11 @@
 import React from 'react';
+import useHover from '../hooks/useHover.ts';
 
-export const Listing = ({ listing }) => (
+export const Listing = ({ listing }) => {
+  const [ref,isHovering] = useHover()
+ console.log("isHovering",isHovering,ref);
+ 
+  return (
   <div
     className="card"
     style={{
@@ -12,6 +17,7 @@ export const Listing = ({ listing }) => (
       height: '100%',
       margin: '1 1em',
     }}
+    ref={ref}
   >
     <div style={{ position: 'relative', height: '200px', width: '100%' }}>
       <img alt={listing.title} src={listing.image} height="200px" />
@@ -30,3 +36,4 @@ export const Listing = ({ listing }) => (
     </div>
   </div>
 );
+}
